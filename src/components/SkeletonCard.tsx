@@ -1,8 +1,6 @@
 import { Card, CardBody, SkeletonText } from "@chakra-ui/react";
 
-type Props = {};
-
-const SkeletonCard = (props: Props) => {
+const SkeletonCard = () => {
     return (
         <Card boxShadow="lg">
             <CardBody>

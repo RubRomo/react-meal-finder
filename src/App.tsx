@@ -7,13 +7,12 @@ import {
     DrawerOverlay,
     Grid,
     GridItem,
-    IconButton,
     useDisclosure,
 } from "@chakra-ui/react";
 import Header from "./components/Header";
 import SideNav from "./components/SideNav";
 import MainContent from "./components/MainContent";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { Category, Meal, MealDetails, SearchForm } from "./types";
 import useHttpData from "./hooks/useHttpData";
 import axios from "axios";
