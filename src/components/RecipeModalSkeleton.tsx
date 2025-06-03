@@ -1,9 +1,6 @@
 import { Container, SkeletonText } from "@chakra-ui/react";
-import React from "react";
 
-type Props = {};
-
-const RecipeModalSkeleton = (props: Props) => {
+const RecipeModalSkeleton = () => {
     return (
         <Container>
             <SkeletonText

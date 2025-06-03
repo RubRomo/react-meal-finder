@@ -33,7 +33,7 @@ const MealCard = ({ meal, openRecipe }: Props) => {
                     opacity={imageLoaded ? "1" : "0"}
                     style={{ transition: "opacity 0.3s ease-in-out" }}
                 />
-                <Heading size="md" color="blue.400" mt={4}>
+                <Heading size="md" color="black.400" mt={4}>
                     {meal.strMeal}
                 </Heading>
             </CardBody>

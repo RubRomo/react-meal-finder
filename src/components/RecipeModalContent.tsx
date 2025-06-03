@@ -1,5 +1,4 @@
 import {
-    Heading,
     Image,
     Text,
     ModalBody,
@@ -17,7 +16,7 @@ type Props = {
 };
 
 const joinIngredients = (data: MealDetails) => {
-    let ingredients = [];
+    const ingredients = [];
     for (let index = 1; index < 20; index++) {
         const ingredient = data[`strIngredient${index}`];
         const measure = data[`strMeasure${index}`];
