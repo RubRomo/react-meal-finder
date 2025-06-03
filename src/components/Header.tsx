@@ -40,7 +40,7 @@ const Header = ({ onSubmit, onOpen }: Props) => {
                         </InputLeftElement>
                         <Input
                             mr="2"
-                            {...register("search", { required: true })}
+                            {...register("search", { required: false })}
                             isInvalid={errors.search ? true : false}
                             focusBorderColor={
                                 errors.search ? "crimson" : "blue.400"
