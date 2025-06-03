@@ -1,5 +1,5 @@
 import { Meal } from "../types";
-import { SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import MealCard from "./MealCard";
 import SkeletonCard from "./SkeletonCard";
 
@@ -11,11 +11,15 @@ type Props = {
 
 const MainContent = ({ loading, meals, openRecipe }: Props) => {
     const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
-    return (
+    return !loading && !meals?.length ? (
+        <Box textAlign="center" padding="20px" color="gray.500">
+            No meals found
+        </Box>
+    ) : (
         //Passing `columns={[2, null, 3]}` is equals to base: 2 columns, md: 3 columns
         <SimpleGrid columns={[2, null, 3, 4]} spacing="20px">
             {loading && skeletons.map((s) => <SkeletonCard key={s} />)}
-            {!loading &&
+            {!loading && meals?.length && 
                 meals.map((m) => {
                     return (
                         <MealCard
@@ -24,7 +28,8 @@ const MainContent = ({ loading, meals, openRecipe }: Props) => {
                             meal={m}
                         />
                     );
-                })}
+                })
+            }
         </SimpleGrid>
     );
 };

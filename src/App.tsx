@@ -38,7 +38,7 @@ function App() {
 
     const [selectedCat, setSelectedCat] = useState<Category>(defaultCategory);
 
-    const { loading, data } = useHttpData<Category>(url);
+    const { loading, data: dataCategory } = useHttpData<Category>(url);
 
     const {
         loading: loadingMeal,
@@ -112,7 +112,7 @@ function App() {
                     overflowY="auto"
                 >
                     <SideNav
-                        categories={data}
+                        categories={dataCategory}
                         loading={loading}
                         selectedCategory={selectedCat}
                         setCategory={setSelectedCat}
@@ -144,7 +144,7 @@ function App() {
                     <DrawerHeader>Categories</DrawerHeader>
                     <DrawerBody>
                         <SideNav
-                            categories={data}
+                            categories={dataCategory}
                             loading={loading}
                             selectedCategory={selectedCat}
                             setCategory={(category) => {
